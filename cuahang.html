@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/cuahang.css">
+    <title>cleverfood</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="top">
+        <div class="header">
+            <div class="logo">
+                <a href="./index.html"><img src="./img/logo-new.png" alt=""></a>
+
+            </div>
+            <div class="list-product">
+                <ul>
+                    <li><a href="./index.html" class="lang" key="home">Trang chủ</a></li>
+                    <li><a href="./gioithieu.html" class="lang" key="intro">Giới thiệu</a></li>
+                    <li>
+                        <a href="" class="lang" key="shop">Cửa hàng</a>
+
+                        <ul>
+                            <li><a href="" class="lang" key="vegetables">Rau củ</a> </li>
+                            <li><a href="" class="lang" key="fruits">Trái cây</a></li>
+                            <li><a href="" class="lang" key="drinks">Đồ uống</a></li>
+                            <li><a href="" class="lang" key="foods">Đồ khô</a></li>
+                        </ul>
+
+
+                    </li>
+                    <li><a href="./kienthuc.html" class="lang" key="knowledge">Kiến thức</a> </li>
+                    <li><a href="./lienhe.html" class="lang" key="contact">Liên hệ</a> </li>
+
+                </ul>
+            </div>
+            <div class="list-icon">
+                <ul>
+                    <li onclick="openSearch()"><i class="fas fa-search"></i></li>
+                    <li onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="fas fa-user"></i></li>
+                    <li><i class="fas fa-shopping-cart"></i></li>
+                    <li class="translate">
+                        <span>Translate</span>
+                        <i class="fas fa-globe-europe"></i>
+                        <ul>
+                            <li id="vn" class="translating">Vietnamese</li>
+                            <li id="en" class="translating">English</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- The Modal -->
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="./index.html" method="post">
+            <div class="imgcontainer">
+                <!-- nut close -->
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username or Email</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <!-- cancel -->
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+    <!-- the modal search -->
+    <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+        <div class="overlay-content">
+            <form action="action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button style="margin: 6px 0px;" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="title">
+        <div class="link">
+            <h3>Trang chủ /</h3>
+            <span>  Cửa hàng</span>
+        </div>
+
+        <div class="select">
+            <span> Hiển thị 1–12 trong 16 kết quả</span>
+            <select id="myOptions" style="border: 1px solid #ece7e7;">
+                <option  value="option1">Thứ tự mặc định</option>
+                <option value="option2">Thứ tự theo mức độ phổ biến</option>
+                <option  value="option3">Thứ tự theo điểm đánh giá</option>
+                <option value="option4">Thứ tự theo giá:cao xuống thấp</option>
+              </select>
+        </div>
+
+    </div>
+
+    <div class="kienthuc">
+        <div class="shide_bar">
+            <form action="">
+                <input id="search_item" type="text" placeholder="Tìm kiếm...">
+                <button><i class="fas fa-search"></i></button>
+            </form>
+            <div class="danhmucsp">
+                <h3>DANH MỤC SẢN PHẨM</h3>
+                <div class="ml">
+                    <p>Rau củ</p>
+                </div>
+                <div class="ml">
+                    <p>Trái cây</p>
+                </div>
+                <div class="ml">
+                    <p>Đồ uống</p>
+                </div>
+                <div class="ml">
+                    <p>Đồ khô</p>
+                </div>
+            </div>
+            <div class="baivietmoi">
+                <h3>SẢN PHẨM</h3>
+                <div class="mucluc">
+                    <img src="./img/nhoxanh.jpg" alt="">
+                    <div class="name-product">
+                        <span>Nho xanh</span>
+                        <small>320,000 đ</small>
+                    </div>
+                </div>
+                <div class="mucluc">
+                    <img src="./img/dao.jpg" alt="">
+                    <div class="name-product">
+                        <span>Đào</span>
+                        <small>320,000 đ</small>
+                    </div>
+                </div>
+                <div class="mucluc">
+                    <img src="./img/chanhday.jpg" alt="">
+                    <div class="name-product">
+                        <span>Chanh dây</span>
+                        <small>320,000 đ</small>
+                    </div>
+                </div>
+                <div class="mucluc">
+                    <img src="./img/chuoichin.jpg" alt="">
+                    <div class="name-product">
+                        <span>Chuối</span>
+                        <small>320,000 đ</small>
+                    </div>
+
+                </div>
+                <div class="mucluc">
+                    <img src="./img/duachot.jpg" alt="">
+                    <div class="name-product">
+                        <span>Dưa leo</span>
+                        <small>320,000 đ</small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="List_content">
+            <div onclick="giohang()" class="content-one numberone">
+                <img src="./img/cachua.jpg" alt="">
+                <h4>Cà chua</h4>
+                <p>320,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="one" class="content-one numbertwo">
+                <img src="./img/cam.jpg" alt="">
+                <h4>Cam</h4>
+                <p>250,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="one" class="content-one numberthree">
+                <img src="./img/chanh.jpg" alt="">
+                <h4>Chanh</h4>
+                <p>210,000 đ</p>
+            </div>
+
+            <div onclick="giohang()" id="one" class="content-one numberfour">
+                <img src="./img/chanhday.jpg" alt="">
+                <h4>Chanh dây</h4>
+                <p>190,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="two" class="content-one numberfive">
+                <img src="./img/chuoichin.jpg" alt="">
+                <h4>Chuối</h4>
+                <p>150,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="two" class="content-one numbersix">
+                <img src="./img/dao.jpg" alt="">
+                <h4>Đào</h4>
+                <p>330,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="two" class="content-one numberseven">
+                <img src="./img/duachot.jpg" alt="">
+                <h4>Dưa leo</h4>
+                <p>50,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="two" class="content-one ">
+                <img src="./img/dua.jpg" alt="">
+                <h4>Dừa sáp</h4>
+                <p>35,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="three" class="content-one">
+                <img src="./img/luu.jpg" alt="">
+                <h4>Lựu</h4>
+                <p>170,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="three" class="content-one">
+                <img src="./img/nhoxanh.jpg" alt="">
+                <h4>Nho xanh</h4>
+                <p>320,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="three" class="content-one">
+                <img src="./img/ot.jpg" alt="">
+                <h4>Ớt</h4>
+                <p>450,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="three" class="content-one">
+                <img src="./img/quaoccho.jpg" alt="">
+                <h4>Quả óc chó</h4>
+                <p>120,000 đ</p>
+            </div>
+        </div>
+        <!-- sap xep tu cao xuong -->
+        <div class="sorthigh">
+            <div onclick="giohang()" id="three" class="content-one">
+                <img src="./img/ot.jpg" alt="">
+                <h4>Ớt</h4>
+                <p>450,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="two" class="content-one numbersix">
+                <img src="./img/dao.jpg" alt="">
+                <h4>Đào</h4>
+                <p>330,000 đ</p>
+            </div>
+            <div onclick="giohang()" class="content-one numberone">
+                <img src="./img/cachua.jpg" alt="">
+                <h4>Cà chua</h4>
+                <p>320,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="three" class="content-one">
+                <img src="./img/nhoxanh.jpg" alt="">
+                <h4>Nho xanh</h4>
+                <p>320,000 đ</p>
+            </div>
+
+            <div onclick="giohang()" id="one" class="content-one numbertwo">
+                <img src="./img/cam.jpg" alt="">
+                <h4>Cam</h4>
+                <p>250,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="one" class="content-one numberthree">
+                <img src="./img/chanh.jpg" alt="">
+                <h4>Chanh</h4>
+                <p>210,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="one" class="content-one numberfour">
+                <img src="./img/chanhday.jpg" alt="">
+                <h4>Chanh dây</h4>
+                <p>190,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="three" class="content-one">
+                <img src="./img/luu.jpg" alt="">
+                <h4>Lựu</h4>
+                <p>170,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="two" class="content-one numberfive">
+                <img src="./img/chuoichin.jpg" alt="">
+                <h4>Chuối</h4>
+                <p>150,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="three" class="content-one">
+                <img src="./img/quaoccho.jpg" alt="">
+                <h4>Quả óc chó</h4>
+                <p>120,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="two" class="content-one numberseven">
+                <img src="./img/duachot.jpg" alt="">
+                <h4>Dưa leo</h4>
+                <p>50,000 đ</p>
+            </div>
+            <div onclick="giohang()" id="two" class="content-one ">
+                <img src="./img/dua.jpg" alt="">
+                <h4>Dừa sáp</h4>
+                <p>35,000 đ</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- login in -->
+
+    <div class="log">
+        <h1>Đăng ký để nhận cập nhật</h1>
+        <p>Để lại email để không bỏ lỡ bất kì ưu đãi nào</p>
+        <form action="">
+            <input type="text" placeholder="Email...">
+            <button type="button" onclick="dieuhuong()"> ĐĂNG KÝ</button>
+        </form>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="mona">
+            <div class="logo"><img src="./img/logo-new.png" alt=""></div>
+            <div class="infro">
+                <p>
+                    235 Hoàng Quốc Việt,Quận Bắc Từ Liêm,Hà Nội
+                    <br><br> 076 922 0162
+                    <br> <br> phuc25186@gmail.com
+
+                </p>
+            </div>
+        </div>
+        <div class="menu">
+            <h3>Menu</h3><br>
+            <span><a href="" class="lang" key="home">Trang chủ</a> </span><br>
+            <span><a href="" class="lang" key="intro">Giới thiệu</a></span><br>
+            <span><a href="" class="lang" key="shop">Cửa hàng</a></span><br>
+            <span><a href="" class="lang" key="knowledge">Kiến thức</a></span><br>
+            <span><a href="" class="lang" key="contact">Liên hệ</a></span>
+        </div>
+        <div class="product-footer">
+            <h3>Sản phẩm</h3><br>
+            <span><a href="" class="lang" key="vegetables">Rau củ</a></span><br>
+            <span><a href="" class="lang" key="fruits">Trái cây</a></span><br>
+            <span><a href="" class="lang" key="drinks">Đồ uống</a></span><br>
+            <span><a href="" class="lang" key="foods">Đồ khô</a></span><br>
+        </div>
+        <div class="instagram">
+            <h3>INSTAGRAM</h3><br>
+            <span>Instagram has returned invalid data.</span>
+        </div>
+    </footer>
+    <!-- copyright -->
+    <div class="copyright">
+        <p>Copyright 2021 RenoshopBee all right reserved - Code by Phuc Nguyen-Hong Phong</p>
+    </div>
+    <!-- top -->
+    <a href="#top" class="gotop"><i class="fas fa-arrow-alt-circle-up"></i></a>
+    <!-- loading -->
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+</body>
+
+<script src="./js/cuahang.js"></script>
+
+</html>

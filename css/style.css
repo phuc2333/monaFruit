@@ -1,0 +1,1045 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color:rgb(146,125,125);
+}
+ul{
+    list-style: none;
+    margin: 0px;
+}
+header{
+    max-height: 130px;
+    background-color: rgb(255,255,255);
+}
+header .header{
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 112px;
+    padding: 0px 30px;
+    transition: 0.4s;
+}
+
+.header.bienhinh {
+    background-color: rgb(238 236 236 / 75%);
+    /* position: fixed; */
+    width: 100%;
+    margin: 0px;
+    padding: 3;
+    padding: 0px;
+     position: fixed;
+     z-index: 3;
+}
+
+/* logo */
+
+header .header .logo{
+    width: 20%;
+    padding: 44px 0px 44px 0px;
+}
+
+header .header.bienhinh .logo {
+    text-align: center;
+}
+header .header .logo img{
+    width: 150px;
+    height: 46px;
+}
+
+/* list-product */
+header .header .list-product{
+   width: 50%;
+   padding: 44px 0px 44px 0px;
+   text-align: center;
+}
+header .header .list-product ul{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+}
+header .header .list-product ul li:first-child a{
+    color: rgb(134,186,9);
+}
+header .header .list-product ul li{
+    padding: 10px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 25px;
+    color: rgb(146,125,125);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+header .header .list-product ul li a:hover{
+    color: rgb(134,186,9);
+    cursor: pointer;
+}
+header .header .list-product ul li:nth-child(3)
+{
+    position: relative;
+}
+header .header .list-product ul li:nth-child(3) ul{
+   display: none;
+}
+header .header .list-product ul li:nth-child(3):hover ul{
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 260px;
+    height: 206.4px;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    background-color: rgb(249 249 249 / 93%);
+    top: 50px;
+    box-shadow: 5px 5px 20px 5px #888888cf;
+    left: -50px;
+    padding: 0px;
+}
+header .header .list-product ul li:nth-child(3) ul li{
+    padding: 0px;
+    display: flex;
+    padding-left: 15px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    line-height: 35px;
+    font-weight: 400;
+    color: rgb(17 17 17 / 33%);
+    text-transform: none;
+}
+header .header .list-product ul li:nth-child(3) ul li a{
+    color: rgb(146,125,125);
+}
+header .header .list-product ul li:nth-child(3) ul li:hover{
+    background-color: rgb(125 125 125 / 42%);
+}
+
+header .header .list-product ul li:nth-child(3) ul:before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 85px;
+    border-bottom: 10px solid rgb(251,248,248);
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+/* list-icon */
+header .header .list-icon{
+   width: 30%;    
+   padding: 44px 0px 44px 0px;
+   text-align: center;
+}
+header .header .list-icon ul{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+header .header .list-icon ul li{
+    padding: 10px;
+    padding-right: 25px;
+    color: rgb(125,125,125);
+}
+header .header .list-icon ul li:hover{
+    cursor: pointer;
+    color: rgb(134,186,9);
+}
+header .header .list-icon ul li.translate{
+     font-family: 'Roboto Slab', serif;
+     font-size: 16px;
+     font-weight: 700;
+     line-height: 16px;
+     color: rgb(146,125,125);
+     width: 40%;
+     position: relative;
+     display: flex;
+     justify-content: space-around;
+}
+header .header .list-icon ul li.translate:hover{
+    cursor: pointer;
+    color: rgb(134,186,9);
+}
+header .header .list-icon ul li.translate ul {
+    display: none;
+}
+header .header .list-icon ul li.translate ul::before{
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 56px;
+    border-bottom: 10px solid rgb(251,248,248);
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+header .header .list-icon ul li.translate ul li{
+   display: flex;
+}
+header .header .list-icon ul li.translate:hover ul{
+    display: block;
+    width: 148px;
+    height: 90px;
+    z-index: 9999;
+    background-color: rgb(251,248,248);
+    position: absolute;
+    top: 38px;
+    left: -22px;
+    box-shadow: 5px 5px 20px 5px #888888cf;
+    padding: 0px;
+}
+header .header .list-icon ul li i.fas{
+    font-size: 20px;
+}
+/* slider */
+
+.slider{
+    position: relative;
+    background-color: aliceblue;
+    
+    height: 650px;
+    z-index: 0;
+}
+.slider img{
+    position: absolute;
+    width: 100%;
+    height: 650px;
+}
+.slider a{
+    display: block;
+    width: 90px;
+    height: 30px;
+    background-color: #00000073;
+    text-align: center;
+    color: aliceblue;
+    text-decoration: none;
+    line-height: 30px;
+}
+div.slider a.next{
+    position: absolute;
+    right: 20px;
+    top: 290px;
+    height: 36px;
+    border-radius: 100px 100px;
+    width: 36px;
+    padding: 3px;
+    opacity: 0;
+    
+}
+div.slider a.prev{
+    position: absolute;
+    left: 20px;
+    top: 290px;
+    height: 36px;
+    border-radius: 100px 100px;
+    width: 36px;
+    padding: 3px;
+    opacity: 0;
+}
+div.slider:hover a.prev,div.slider:hover a.next{
+    opacity: 1;
+    transition: all ease-in-out 0.5s;
+}
+div.slider a.prev:hover,div.slider a.next:hover{
+    background-color: #86ba09;
+}
+.slider button{
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    background-color: rgb(133,186,8);
+    color: rgb(254,254,252);
+    letter-spacing: 2px;
+    font-size: 18px;
+    line-height: 29px;
+    font-weight: 700;
+    border-radius: 30px 30px;
+    border: 0px solid white;
+     top: 328px;
+     left: 180px;
+}
+.slider button:hover{
+    cursor: pointer;
+    color: rgb(133,186,8);
+    background-color: #FFF;
+}
+
+/* loading */
+
+.loader-wrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+.loader{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 25%;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+}
+
+.loader-inner{
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color:  #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader{
+    0%{ transform: rotate(0deg);}
+    25%{ transform: rotate(180deg);}
+    50%{ transform: rotate(180deg);}
+    75%{ transform: rotate(360deg);}
+    100%{ transform: rotate(360deg);}
+}
+@keyframes loader-inner{
+    0%{ height: 0%;}
+    25%{ height: 0%;}
+    50%{ height: 100%;}
+    75%{ height: 100%;}
+    100%{ height: 0%;}
+}
+
+ .pro{
+    /* position: absolute; */
+    /* top: 578px; */
+    width: 1519px;
+    height: 650px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px 148px;
+    /* z-index: 48; */
+    margin-top: -85px;
+    padding-top: -79px;
+}
+ .pro .item{
+    background-color: cornsilk;
+    width: 591px;
+    height: 309px;
+    margin: 10px;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 20px;
+}
+.pro .item img{
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 65%;
+    transition: transform 1s, filter 1s ease-in-out;
+}
+ .pro .item img:hover{
+    filter: brightness(100%);
+    transform: scale(1.2);
+}
+
+/* hot-product */
+
+.hot-products{
+    /* margin-top: 736px; */
+    text-align: center;
+    margin-top: 70px;
+}
+.hot-products h2{
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 46px;
+    color: #121212;
+}
+.hot-products div.hot{
+    text-align: center;
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.hot-products div.hot span{
+    margin-right: 10px;
+    padding: 20px;
+    color: rgb(146,125,125);
+}
+.hot-products div.hot span:nth-child(1){
+    color: rgb(161,186,9);
+}
+.hot-products div.hot span:hover{
+    cursor: pointer;
+    color: rgb(161,186,9);
+}
+
+/* fruit */
+
+.fruits ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.fruits ul li{
+    width: 280px;
+    height: 383px;
+    border-radius: 2px 2px 2px 2px;
+    margin: 0px 15px 15px 30px;
+    border-radius: 30px 30px;
+    border: 1px solid #80808047;
+    overflow: hidden;
+}
+.fruits ul li:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 30px 0px rgb(150, 146, 146);
+}
+.fruits ul li .picture{
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+}
+.fruits ul li .picture img{
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 65%;
+    transition: transform 1s, filter 1s ease-in-out;
+}
+.fruits ul li .picture img:hover{
+    filter: brightness(100%);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.fruits ul li .content{
+    text-align: center;
+    height: 24%;
+    margin-top: 10px;
+}
+.fruits ul li .content h2{
+    text-align: center;
+    font-Family:"Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgb(28,28,28);
+    /* margin-top: 15px; */
+    margin-bottom: 15px;
+}
+.fruits ul li .content h2:hover{
+    color: #86ba09;
+    cursor: pointer;
+}
+.fruits ul li .content small{
+    font-Family:"Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #86ba09;
+}
+.fruits ul li .content small:hover{
+    cursor: context-menu;
+}
+
+/* slide-fruit */
+.slide-fruit{
+    z-index: 2;
+    overflow-x: auto;
+    margin: -80px 20px 20px 20px;
+    padding: 0px 15px;
+    position: relative;
+}
+.slide-fruit::-webkit-scrollbar{
+    width: 0;
+ }
+ .slide-fruit ul{
+    overflow-x: auto;
+ }
+ .slide-fruit ul::-webkit-scrollbar{
+    width: 0;
+ }
+ .slide-fruit span{
+     position: absolute;
+     top: 40%;
+     font-size: 30px;
+     font-weight: bold;
+     color: purple;
+     cursor: pointer;
+     left: 1%;
+     z-index: 3;
+     opacity: 0;
+    
+ }
+ 
+ .slide-fruit span:nth-of-type(2){
+     left: 98%;
+     text-align: right;
+ }
+  .slide-fruit:hover span{
+     opacity: 1;
+      transition: 0.4s;
+ } 
+.slide-fruit ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0px -57px;
+    min-width: 1540px;
+   
+}
+
+.slide-fruit ul li{
+    position: relative;
+    min-width: 280px;
+    height: 383px;
+    border-radius: 2px 2px 2px 2px;
+    border-radius: 30px 30px;
+    border: 1px solid #80808047;
+    overflow: hidden;
+    margin-right: 75px;
+    transition: 0.5s;
+}
+.slide-fruit ul li:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 30px 0px rgb(150, 146, 146);
+}
+.slide-fruit ul li .picture{
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+}
+.slide-fruit ul li .picture img{
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 65%;
+    transition: transform 1s, filter 1s ease-in-out;
+}
+.slide-fruit ul li .picture img:hover{
+    filter: brightness(100%);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.slide-fruit ul li .content{
+    text-align: center;
+    height: 24%;
+    margin-top: 10px;
+}
+.slide-fruit ul li .content h2{
+    text-align: center;
+    font-Family:"Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgb(28,28,28);
+    /* margin-top: 15px; */
+    margin-bottom: 15px;
+}
+.slide-fruit ul li .content h2:hover{
+    color: #86ba09;
+    cursor: pointer;
+}
+.slide-fruit ul li .content small{
+    font-Family:"Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #86ba09;
+}
+.slide-fruit ul li .content small:hover{
+    cursor: context-menu;
+}
+/* sale */
+.sale{
+    background-image: url('../img/banner25.jpg');
+    background-size: cover;
+   
+    height: 424px;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.sale .time {
+    padding-top: 86px;
+}
+.sale .time h3{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+.sale .time  p{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.sale .time .time-sale{
+    display: flex;
+    justify-content: space-around;
+}
+.sale .time .time-sale span{
+    width: 155px;
+    height: 110px;
+    border: 3px solid white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 60px 60px 60px 60px;
+    margin-right: 5px;
+}
+.sale .time .time-sale span strong{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+
+
+ /* natural */
+ .natural{
+     
+     width: 1519px;
+     height: 616px;
+     display: flex;
+     justify-content: center;
+     margin-top: 30px;
+ }
+ .natural .left{
+     width: 40%;
+     height: 100%;
+     text-align: center;
+     padding-left: 33px;
+     overflow: hidden;
+ }
+ 
+ .natural .right{
+    width: 89%;
+    height: 100%;
+}
+.natural .right .top{
+    width: 100%;
+    height: 38%;
+    display: flex;
+    justify-content: stretch;
+   
+}
+.natural .right .top section{
+    width: 30%;
+}
+.natural .right .bottom{
+    width: 100%;
+    height: 63%;
+    display: flex;
+    justify-content: stretch;
+    padding-top: 20px;
+    overflow: hidden;
+}
+.natural .right .bottom span{
+    width: 34%;
+    text-align: center;
+    padding-right: 46px;
+    padding-top: 43px; 
+    background-image: url('../img/bg-text.jpg');
+   /* (cái background-clip dùng để xác định danh giới của background) */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; 
+    font-Family:"Roboto Slab", serif;
+    font-weight: 700;
+    font-size: 57px;
+    line-height: 75px;
+}
+.natural .right .bottom section{
+   width: 77%;
+}
+.natural .right:hover,.natural .left:hover{
+    cursor: grab;
+}
+.natural .left img,.natural .right .top section,.natural .right .bottom section{
+    transform-origin: 50% 65%;
+    transition: transform 1s ease 0s, filter 1s ease-in-out 0s;
+}
+.natural .left img:hover,.natural .right .top section:hover,.natural .right .bottom section:hover{
+    filter: brightness(100%);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/* <!-- trademark --> */
+.trademark{
+    /* width: 1234px; */
+    height: 209px;
+    overflow-x: auto;
+    margin: 0px 150px;
+    /* margin: 10px 117px 10px 100px; */
+    position: relative;
+}
+.trademark::-webkit-scrollbar{
+  visibility: hidden;
+}
+.trademark ul{
+    height: 75%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    width: 150%;
+    height: 100%;
+}
+.trademark ul li{
+    transition: 0.4s;
+    width: 13%;
+    padding-right: 13px;
+    padding-left: 90px;
+    text-align: center;
+    padding-top: 35px;
+    position: relative;
+}
+.trademark ul li img{
+    width: 100%;
+}
+.trademark span{
+    position: absolute;
+    top: 40%;
+    font-size: 30px;
+    font-weight: bold;
+    color: purple;
+    cursor: pointer;
+    left: 1%;
+    z-index: 3;
+    
+}
+.trademark span:nth-of-type(2){
+    left: 98%;
+    text-align: right;
+}
+ .trademark:hover span{
+    opacity: 1;
+     transition: 0.4s;
+} 
+hr{
+    margin: 10px 120px;
+}
+
+/* log */
+.log{
+    
+    height: 403.18px;
+    background-image: url('../img/bg-footer8.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.log h1{
+    font-Family:"Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 46px;
+    margin-top: 103px;
+    color:#ffffff;
+    margin-bottom: 24px;
+}
+.log p{
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color:#ffffff;
+    margin-bottom: 30px;
+}
+.log form{
+    width: 800px;
+    height: 66px;
+    text-align: center;
+}
+.log form input{
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color:#333333;
+    background-color: rgb(255,255,255);
+    border-radius: 30px 0px 0px 30px;
+    width: 50%;
+    height: 45px;
+    padding-left: 20px;
+}
+.log form button{
+    margin: -4px;
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color:rgb(255,255,255);
+    background-color: rgb(134,186,9);
+    border-radius: 0px 30px 30px 0px;
+    width: 14%;
+    height: 45px;
+}
+.log form button:hover{
+    background-color: rgb(117, 128, 134);
+}
+
+/* footer */
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+footer .mona{
+    display: flex;
+    flex-direction: column;
+}
+footer .mona .logo{
+    margin-bottom: 10px;
+}
+footer .mona .logo img{
+    width: 180px;
+    height: 60px;
+}
+
+.menu span a,.product-footer span a{
+    font-size: 16px;
+    color: #242f3f;
+}
+ .menu span a:hover,.product-footer span a:hover, .instagram span:hover{
+    color: #86ba09;
+    cursor: pointer;
+}
+
+.copyright{
+   
+    height: 80px;
+    text-align: center;
+    background-color: #242f3f;
+}
+.copyright p{
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 76px;
+    color: #Fff;
+    margin: 0px;
+}
+.gotop{
+    float: right;
+    position: fixed;
+    text-decoration: none;
+    line-height: 50px;
+    font-size: 50px;
+    color: rgb(134,186,9);
+    bottom: 40px;
+    right: 50px;
+    z-index: 2;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the image and position the close button */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 25%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }
+
+  /* the modal search */
+  .overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    
+    background-color: rgb(0 0 0 / 35%); /* Black with a little bit see-through */
+  }
+  
+  /* The content */
+  .overlay-content {
+    display: flex;
+    justify-content: center;
+    justify-content: absolute;
+    position: relative;
+    /* justify-content: center; */
+    top: 46%;
+    width: 66%;
+    /* text-align: center; */
+    margin-top: 30px;
+    margin: auto;
+  }
+  .overlay-content form{
+      width: 60%;
+  }
+  /* Close button */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .overlay .closebtn:hover {
+    color: #ccc;
+  }
+  
+  /* Style the search field */
+  .overlay input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 79%;
+    background: white;
+  }
+  
+  .overlay input[type=text]:hover {
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  .overlay button {
+    float: left;
+    width: 21%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .overlay button:hover {
+    background: #bbb;
+  }

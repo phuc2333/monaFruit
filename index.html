@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+
+    <title>cleverfood</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="top">
+        <div class="header">
+            <div class="logo">
+                <a href="./index.html"><img src="./img/logo-new.png" alt=""></a>
+
+            </div>
+            <div class="list-product">
+                <ul>
+                    <li><a href="./index.html" class="lang" key="home">Trang chủ</a></li>
+                    <li><a href="./gioithieu.html" class="lang" key="intro">Giới thiệu</a></li>
+                    <li>
+                        <a href="./cuahang.html" class="lang" key="shop">Cửa hàng</a>
+
+                        <ul>
+                            <li><a href="" class="lang" key="vegetables">Rau củ</a> </li>
+                            <li><a href="" class="lang" key="fruits">Trái cây</a></li>
+                            <li><a href="" class="lang" key="drinks">Đồ uống</a></li>
+                            <li><a href="" class="lang" key="foods">Đồ khô</a></li>
+                        </ul>
+
+
+                    </li>
+                    <li><a href="./kienthuc.html" class="lang" key="knowledge">Kiến thức</a> </li>
+                    <li><a href="./lienhe.html" class="lang" key="contact">Liên hệ</a> </li>
+
+                </ul>
+            </div>
+            <div class="list-icon">
+                <ul>
+                    <li onclick="openSearch()"><i class="fas fa-search"></i></li>
+                    <li onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="fas fa-user"></i></li>
+                    <li><i class="fas fa-shopping-cart"></i></li>
+                    <li class="translate">
+                        <span>Translate</span>
+                        <i class="fas fa-globe-europe"></i>
+                        <ul>
+                            <li id="vn" class="translating">Vietnamese</li>
+                            <li id="en" class="translating">English</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+    <!-- The Modal login-->
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="./index.html" method="post">
+            <div class="imgcontainer">
+                <!-- nut close -->
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username or Email</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <!-- cancel -->
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <!-- the modal search -->
+    <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+        <div class="overlay-content">
+            <form action="action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- slider -->
+    <div class="slider">
+        <img id="img" src="./banner-1.jpg" class="slide-item" number="0" alt="">
+        <img id="img" src="./banner-2.jpg" class="slide-item" number="1" style="display: none;" alt="">
+        <a onclick="stopscreen()" href="#" class="next"><i class="fas fa-chevron-right"></i></a>
+        <a onclick="stopscreen()" href="#" class="prev"><i class="fas fa-chevron-left"></i></a>
+        <button>MUA NGAY</button>
+
+    </div>
+
+
+    <div class="pro">
+        <div class="item"><img src="./img/banner36.jpg" alt=""></div>
+        <div class="item"><img src="./img/banner35.jpg" alt=""></div>
+        <div class="item"><img src="./img/banner34.jpg" alt=""></div>
+        <div class="item"><img src="./img/banner28.jpg" alt=""></div>
+    </div>
+
+
+    <div class="hot-products">
+        <h2>Sản phẩm nổi bật</h2>
+        <div class="hot">
+            <span>MỚI NHẤT</span>
+            <span>GIẢM GIÁ</span>
+            <span>BÁN CHẠY</span>
+        </div>
+    </div>
+    <!-- fruit-product  -->
+    <div class="fruits">
+        <ul>
+            <li>
+                <div class="picture">
+                    <img src="./img/chanh.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Chanh</h2>
+                    <small>210,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/xoai.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Xoài</h2>
+                    <small>180,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/chanhday.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Chanh dây</h2>
+                    <small>190,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/dao.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Đào</h2>
+                    <small>330,000 ₫</small>
+                </div>
+            </li>
+
+        </ul>
+
+        <ul>
+            <li>
+                <div class="picture">
+                    <img src="./img/luu.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Lựu</h2>
+                    <small>170,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/taoxanh.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Táo xanh</h2>
+                    <small>220,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/quaoccho.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Quả óc chó</h2>
+                    <small>120,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/suplo.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Súp lơ</h2>
+                    <small>350,000 ₫</small>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- sale -->
+
+    <div class="sale">
+        <div class="time">
+            <h3>Khuyến Mãi Trong Tuần</h3>
+            <p>Cơ hội để gia đình bạn sở hữu những sản phẩm ưu đãi</p>
+            <div class="time-sale">
+                <span>
+                    <strong>0 <br> GIỜ</strong>
+                </span>
+                <span>
+                    <strong>0 <br> PHÚT</strong>
+                </span>
+                <span>
+                    <strong>0 <br> GIÂY</strong>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- slide-sanpham -->
+    <div class="slide-fruit">
+        <span><i class="fas fa-chevron-left"></i></span>
+        <span><i class="fas fa-chevron-right"></i></span>
+        <ul>
+            <li>
+                <div class="picture">
+                    <img src="./img/chanh.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Chanh</h2>
+                    <small>210,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/xoai.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Xoài</h2>
+                    <small>180,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/chanhday.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Chanh dây</h2>
+                    <small>1990,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/dao.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Đào</h2>
+                    <small>330,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/chanh.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Chanh</h2>
+                    <small>210,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/xoai.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Xoài</h2>
+                    <small>180,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/chanhday.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Chanh dây</h2>
+                    <small>1990,000 ₫</small>
+                </div>
+            </li>
+            <li>
+                <div class="picture">
+                    <img src="./img/dao.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Đào</h2>
+                    <small>330,000 ₫</small>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- natural -->
+    <div class="natural">
+        <div class="left">
+            <img src="./img/suacam.jpg" alt="">
+        </div>
+        <div class="right">
+            <div class="top">
+                <section><img src="./img/bo.jpg" alt=""></section>
+                <section><img src="./img/cachua.jpg" alt=""></section>
+                <section><img src="./img/chanhleo.jpg" alt=""></section>
+            </div>
+            <div class="bottom">
+                <span>100%<br> NATURAL</span>
+                <section><img src="./img/nuoc_chanh.jpg" alt=""></section>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    <!-- trademark -->
+
+    <div class="trademark">
+        <span><i class="fas fa-chevron-left"></i></span>
+        <span><i class="fas fa-chevron-right"></i></span>
+        <ul>
+            <li><img src="./img/brand1.png" alt=""></li>
+            <li><img src="./img/brand2.png" alt=""></li>
+            <li><img src="./img/brand3.png" alt=""></li>
+            <li><img src="./img/brand5.png" alt=""></li>
+            <li><img src="./img/brand3.png" alt=""></li>
+            <li><img src="./img/brand5.png" alt=""></li>
+            <li><img src="./img/brand3.png" alt=""></li>
+            <li><img src="./img/brand5.png" alt=""></li>
+        </ul>
+    </div>
+    <!-- login in -->
+
+    <div class="log">
+        <h1>Đăng ký để nhận cập nhật</h1>
+        <p>Để lại email để không bỏ lỡ bất kì ưu đãi nào</p>
+        <form action="">
+            <input type="text" placeholder="Email...">
+            <button>ĐĂNG KÝ</button>
+        </form>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="mona">
+            <div class="logo"><img src="./img/logo-new.png" alt=""></div>
+            <div class="infro">
+                <p>
+                    235 Hoàng Quốc Việt,Quận Bắc Từ Liêm,Hà Nội
+                    <br><br> 076 922 0162
+                    <br> <br> phuc25186@gmail.com
+
+                </p>
+            </div>
+        </div>
+        <div class="menu">
+            <h3>Menu</h3><br>
+            <span><a href="" class="lang" key="home">Trang chủ</a> </span><br>
+            <span><a href="" class="lang" key="intro">Giới thiệu</a></span><br>
+            <span><a href="" class="lang" key="shop">Cửa hàng</a></span><br>
+            <span><a href="" class="lang" key="knowledge">Kiến thức</a></span><br>
+            <span><a href="" class="lang" key="contact">Liên hệ</a></span>
+        </div>
+        <div class="product-footer">
+            <h3>Sản phẩm</h3><br>
+            <span><a href=""class="lang" key="vegetables">Rau củ</a></span><br>
+            <span><a href=""class="lang" key="fruits">Trái cây</a></span><br>
+            <span><a href=""class="lang" key="drinks">Đồ uống</a></span><br>
+            <span><a href=""class="lang" key="foods">Đồ khô</a></span><br>
+        </div>
+        <div class="instagram">
+            <h3>INSTAGRAM</h3><br>
+            <span>Instagram has returned invalid data.</span>
+        </div>
+    </footer>
+    <!-- copyright -->
+    <div class="copyright">
+        <p>Copyright 2020 RenoshopBee all right reserved - Code by Phuc Nguyen-Hong Phong</p>
+    </div>
+    <!-- top -->
+    <a href="#top" class="gotop"><i class="fas fa-arrow-alt-circle-up"></i></a>
+
+    </audio>
+    <!-- loading -->
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+</body>
+
+<script src="./js/javascript.js"></script>
+
+
+</html>

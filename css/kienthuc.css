@@ -1,0 +1,920 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(146, 125, 125);
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+}
+
+header {
+    max-height: 130px;
+    background-color: rgb(255, 255, 255);
+    -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+header .header {
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 112px;
+    padding: 0px 30px;
+    transition: 0.4s;
+}
+
+.header.bienhinh {
+    background-color: rgb(238 236 236 / 75%);
+    /* position: fixed; */
+    width: 100%;
+    margin: 0px;
+    padding: 3;
+    padding: 0px;
+    position: fixed;
+    z-index: 3;
+    top: 0px;
+}
+
+
+/* logo */
+
+header .header .logo {
+    width: 20%;
+    padding: 18px 0px 26px 0px;
+}
+
+header .header.bienhinh .logo {
+    text-align: center;
+}
+
+header .header .logo img {
+    width: 150px;
+    height: 46px;
+}
+
+
+/* list-product */
+
+header .header .list-product {
+    width: 50%;
+    padding: 18px 0px 18px 0px;
+    text-align: center;
+}
+
+header .header .list-product ul {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+header .header .list-product ul li:nth-child(4) a {
+    color: rgb(134, 186, 9);
+}
+
+header .header .list-product ul li {
+    padding: 10px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 25px;
+    color: rgb(146, 125, 125);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header .header .list-product ul li a:hover {
+    color: rgb(134, 186, 9);
+    cursor: pointer;
+}
+
+header .header .list-product ul li:nth-child(3) {
+    position: relative;
+}
+
+header .header .list-product ul li:nth-child(3) ul {
+    display: none;
+}
+
+header .header .list-product ul li:nth-child(3):hover ul {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 260px;
+    height: 206.4px;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    background-color: rgb(249 249 249 / 93%);
+    top: 50px;
+    box-shadow: 5px 5px 20px 5px #888888cf;
+    left: -50px;
+    padding: 0px;
+}
+
+header .header .list-product ul li:nth-child(3) ul li {
+    padding: 0px;
+    display: flex;
+    padding-left: 15px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    line-height: 35px;
+    font-weight: 400;
+    color: rgb(17 17 17 / 33%);
+    text-transform: none;
+}
+
+header .header .list-product ul li:nth-child(3) ul li a {
+    color: rgb(146, 125, 125);
+}
+
+header .header .list-product ul li:nth-child(3) ul li:hover {
+    background-color: rgb(125 125 125 / 42%);
+}
+
+header .header .list-product ul li:nth-child(3) ul:before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 85px;
+    border-bottom: 10px solid rgb(251, 248, 248);
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+
+/* list-icon */
+
+header .header .list-icon {
+    width: 30%;
+    padding: 18px 0px 18px 0px;
+    text-align: center;
+}
+
+header .header .list-icon ul {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+header .header .list-icon ul li {
+    padding: 10px;
+    padding-right: 25px;
+    color: rgb(125, 125, 125);
+}
+
+header .header .list-icon ul li:hover {
+    cursor: pointer;
+    color: rgb(134, 186, 9);
+}
+
+header .header .list-icon ul li.translate {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    color: rgb(146, 125, 125);
+    width: 40%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+header .header .list-icon ul li.translate:hover {
+    cursor: pointer;
+    color: rgb(134, 186, 9);
+}
+
+header .header .list-icon ul li.translate ul {
+    display: none;
+}
+
+header .header .list-icon ul li.translate ul::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 56px;
+    border-bottom: 10px solid rgb(251, 248, 248);
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+header .header .list-icon ul li.translate ul li {
+    display: flex;
+}
+
+header .header .list-icon ul li.translate:hover ul {
+    display: block;
+    width: 148px;
+    height: 90px;
+    z-index: 9999;
+    background-color: rgb(251, 248, 248);
+    position: absolute;
+    top: 38px;
+    left: -22px;
+    box-shadow: 5px 5px 20px 5px #888888cf;
+    padding: 0px;
+}
+
+header .header .list-icon ul li i.fas {
+    font-size: 20px;
+}
+
+
+/* loading */
+
+body {
+    position: relative;
+}
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 25%;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(180deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+    25% {
+        height: 0%;
+    }
+    50% {
+        height: 100%;
+    }
+    75% {
+        height: 100%;
+    }
+    100% {
+        height: 0%;
+    }
+}
+
+div {
+    margin: 20px 0px;
+}
+
+div.title {
+    margin: 38px 0px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+
+div.title h3 {
+    /* margin: 24px; */
+    font-Family: "Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 22px;
+    letter-spacing: 2px;
+}
+
+
+/* kienthuc */
+
+.kienthuc {
+    display: flex;
+    margin: 40px 90px;
+    background-color: rgb(255, 255, 255);
+}
+
+.kienthuc .shide_bar {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.kienthuc .shide_bar form {
+    width: 70%;
+    display: flex;
+    margin: -1px 0px;
+}
+
+.kienthuc .shide_bar form input {
+    height: 37px;
+    width: 95%;
+    margin: 7px;
+    margin-right: 0px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.kienthuc .shide_bar form button {
+    height: 37px;
+    width: 5%;
+    position: relative;
+    border-radius: 0px 5px 5px 0px;
+    background-color: rgb(134, 186, 9);
+}
+
+.kienthuc .shide_bar form button .fa-search {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.kienthuc .shide_bar .baivietmoi {
+    width: 70%;
+    border-left: 1px solid rgb(134, 186, 9);
+    border-radius: 10px 0px 0px 0px;
+}
+
+.kienthuc .shide_bar .baivietmoi h3 {
+    background-color: rgb(134, 186, 9);
+    color: #f2f2f2;
+    height: 70px;
+    padding: 22px 120px 12px 18px;
+    margin: 0px;
+    border-radius: 10px 10px 0px 0px;
+    font-size: 24px;
+}
+
+.kienthuc .shide_bar .baivietmoi .mucluc:nth-of-type(2),
+.kienthuc .shide_bar .baivietmoi .mucluc:nth-of-type(4) {
+    background-color: rgb(255, 255, 255);
+}
+
+.kienthuc .shide_bar .baivietmoi .mucluc:nth-of-type(1),
+.kienthuc .shide_bar .baivietmoi .mucluc:nth-of-type(3),
+.kienthuc .shide_bar .baivietmoi .mucluc:nth-of-type(5) {
+    background-color: rgb(248, 248, 248);
+}
+
+.kienthuc .shide_bar .baivietmoi .mucluc {
+    display: flex;
+    border: 1px solid gainsboro;
+    border-radius: 5px 5px 5px 5px;
+    padding: 20px;
+    margin: 0px;
+}
+
+.kienthuc .shide_bar .baivietmoi .mucluc:hover {
+    cursor: pointer;
+    background-color: rgb(134, 186, 9);
+    color: #ffffff;
+}
+
+.kienthuc .shide_bar .baivietmoi .mucluc img {
+    width: 40px;
+    height: 40px;
+}
+
+.kienthuc .shide_bar .baivietmoi .mucluc p {
+    padding-left: 10px;
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+}
+
+.kienthuc .List_content {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.kienthuc .List_content .content-one {
+    width: 277px;
+    margin-right: 34px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(245, 245, 245);
+    height: 290px;
+}
+
+.kienthuc .List_content .content-one img {
+    width: 100%;
+    height: 50%;
+}
+
+.kienthuc .List_content .content-one h4 {
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 22px;
+    color: #1c1c1c;
+    margin: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.kienthuc .List_content .content-one p {
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    margin: 35px 20px;
+    margin-bottom: 0px;
+}
+
+.kienthuc .List_content .content-one:hover {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.kienthuc .List_content .content-one:hover p {
+    color: #86ba09;
+}
+
+
+/* log */
+
+.log {
+    height: 403.18px;
+    background-image: url('../img/bg-footer8.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.log h1 {
+    font-Family: "Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 46px;
+    margin-top: 103px;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+
+.log p {
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.log form {
+    width: 800px;
+    height: 66px;
+    text-align: center;
+}
+
+.log form input {
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    /* line-height: 22px; */
+    color: #333333;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px 0px 0px 30px;
+    width: 50%;
+    height: 45px;
+    padding-left: 20px;
+}
+
+.log form button {
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin: -4px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(134, 186, 9);
+    border-radius: 0px 30px 30px 0px;
+    width: 14%;
+    height: 45px;
+}
+
+.log form button:hover {
+    background-color: rgb(117, 128, 134);
+}
+
+
+/* footer */
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+footer .mona {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .mona .logo {
+    margin-bottom: 10px;
+}
+
+footer .mona .logo img {
+    width: 180px;
+    height: 60px;
+}
+
+.menu span a,
+.product-footer span a {
+    font-size: 16px;
+    color: #242f3f;
+}
+
+.menu span a:hover,
+.product-footer span a:hover,
+.instagram span:hover {
+    color: #86ba09;
+    cursor: pointer;
+}
+
+.copyright {
+    height: 80px;
+    text-align: center;
+    background-color: #242f3f;
+    margin: 0px;
+}
+
+.copyright p {
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 76px;
+    color: #Fff;
+    margin: 0px;
+}
+
+.gotop {
+    float: right;
+    position: fixed;
+    text-decoration: none;
+    line-height: 50px;
+    font-size: 50px;
+    color: rgb(134, 186, 9);
+    bottom: 40px;
+    right: 50px;
+    z-index: 2;
+}
+
+
+/* Full-width input fields */
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+/* Set a style for all buttons */
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* Extra styles for the cancel button */
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+
+/* Center the image and position the close button */
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    padding-top: 60px;
+    margin-top: 0px;
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 25%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button (x) */
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+
+/* Add Zoom Animation */
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+
+/* contact */
+
+.contact {
+    display: flex;
+    justify-content: center;
+    margin: 100px 100px;
+}
+
+.contact .map {
+    width: 40%;
+    margin: 0px 70px;
+}
+
+.contact .map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.contact .container {
+    width: 50%;
+}
+
+
+/* Style inputs with type="text", select elements and textareas */
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Some padding */
+    border: 1px solid #ccc;
+    /* Gray border */
+    border-radius: 4px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 6px;
+    /* Add a top margin */
+    margin-bottom: 16px;
+    /* Bottom margin */
+    resize: vertical/* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+
+/* Style the submit button with a specific background color etc */
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* When moving the mouse over the submit button, add a darker green color */
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+/* Add a background color and some padding around the form */
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+/* the modal search */
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    margin: 0px;
+    background-color: rgb(0 0 0 / 35%);
+    /* Black with a little bit see-through */
+}
+
+
+/* The content */
+
+.overlay-content {
+    display: flex;
+    justify-content: center;
+    justify-content: absolute;
+    position: relative;
+    /* justify-content: center; */
+    top: 46%;
+    width: 66%;
+    /* text-align: center; */
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlay-content form {
+    width: 60%;
+}
+
+
+/* Close button */
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+.overlay .closebtn:hover {
+    color: #ccc;
+}
+
+
+/* Style the search field */
+
+.overlay input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 79%;
+    background: white;
+}
+
+.overlay input[type=text]:hover {
+    background: #f1f1f1;
+}
+
+
+/* Style the submit button */
+
+.overlay button {
+    float: left;
+    width: 21%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.overlay button:hover {
+    background: #bbb;
+}

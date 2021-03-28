@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/baiviet.css">
+    <title>cleverfood</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="top">
+        <div class="header">
+            <div class="logo">
+                <a href="./index.html"><img src="./img/logo-new.png" alt=""></a>
+
+            </div>
+            <div class="list-product">
+                <ul>
+                    <li><a href="./index.html" class="lang" key="home">Trang chủ</a></li>
+                    <li><a href="./gioithieu.html" class="lang" key="intro">Giới thiệu</a></li>
+                    <li>
+                        <a href="./cuahang.html" class="lang" key="shop">Cửa hàng</a>
+
+                        <ul>
+                            <li><a href="" class="lang" key="vegetables">Rau củ</a> </li>
+                            <li><a href="" class="lang" key="fruits">Trái cây</a></li>
+                            <li><a href="" class="lang" key="drinks">Đồ uống</a></li>
+                            <li><a href="" class="lang" key="foods">Đồ khô</a></li>
+                        </ul>
+
+
+                    </li>
+                    <li><a href="./kienthuc.html" class="lang" key="knowledge">Kiến thức</a> </li>
+                    <li><a href="./lienhe.html" class="lang" key="contact">Liên hệ</a> </li>
+
+                </ul>
+            </div>
+            <div class="list-icon">
+                <ul>
+                    <li onclick="openSearch()"><i class="fas fa-search"></i></li>
+                    <li onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="fas fa-user"></i></li>
+                    <li><i class="fas fa-shopping-cart"></i></li>
+                    <li class="translate">
+                        <span>Translate</span>
+                        <i class="fas fa-globe-europe"></i>
+                        <ul>
+                            <li id="vn" class="translating">Vietnamese</li>
+                            <li id="en" class="translating">English</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- The Modal -->
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="./index.html" method="post">
+            <div class="imgcontainer">
+                <!-- nut close -->
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username or Email</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <!-- cancel -->
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+    <!-- the modal search -->
+    <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+        <div class="overlay-content">
+            <form action="action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button style="margin: 6px 0px;" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="kienthuc">
+
+        <div class="shide_bar">
+            <form action="">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button><i class="fas fa-search"></i></button>
+            </form>
+            <div class="baivietmoi">
+                <h3>Bài viết mới</h3>
+                <div class="mucluc">
+                    <img src="./img/picture-1.jpg" alt="">
+                    <p>Nấm vân chi có tác dụng gì?</p>
+                </div>
+                <div class="mucluc">
+                    <img src="./img/picture-2.jpg" alt="">
+                    <p>Chả cốm ăn với gì ngon</p>
+                </div>
+                <div class="mucluc">
+                    <img src="./img/picture-3.jpg" alt="">
+                    <p>Cốm tươi làm món gì ngon?</p>
+                </div>
+                <div class="mucluc">
+                    <img src="./img/picture-4.jpg" alt="">
+                    <p style="text-overflow: ellipsis;">Cách làm măng tây xào tỏi</p>
+                </div>
+                <div class="mucluc">
+                    <img src="./img/picture-5.jpg" alt="">
+                    <p>Súp lơ xanh nấu món gì ngon?</p>
+                </div>
+            </div>
+        </div>
+        <div class="List_content">
+            <div class="top">
+                <h6>Kiến thức</h6>
+                <h3>Nấm Vân Chi có tác dụng gì?</h3>
+                <span>POSTED ON 16 THÁNG NĂM, 2019 BY MONA</span>
+            </div>
+            <div class="picture">
+                <img src="/img/img_baiviet.jpg" alt="">
+            </div>
+            <div class="content">
+                <p>Cách đây hơn 2000 năm, nấm vân chi rừng đã được biết đến và sử dụng tại Trung Quốc. Giờ đây, khi khoa học phát triển thì công dụng của nấm vân chi rừng ngày càng được khẳng định và nhiều người biết tới.
+                    <br>
+                    <strong>Có bao nhiêu loại nấm vân chi rừng?</strong>
+                    <br> Nấm vân chi là loại nấm dược liệu quan trọng, được nghiên cứu có tác dụng tốt với sức khỏe con người. Đặc biệt, nấm vân chi rừng mọc trong tự nhiên còn có nhiều dưỡng chất có lợi hơn nữa.
+
+                </p>
+                <div class="namvanchi">
+                    <img style="height:100%" src="./img/nam-van-chi-rung-1-300x112.jpg" alt="">
+                </div>
+                <h3 style="margin: 20px 0px;">Các loại nấm vân chi rừng:</h3>
+                <ul>
+                    <li style="list-style: disc;"><strong>Nấm vân chi đỏ:</strong> Loại nấm vân chi rừng này có màu sắc đặc trưng là màu đỏ, mũ nấm không quá dày, từ 0,1 – 0,3cm và không hề có cuống. Loại nấm vân chi rừng đỏ có kích thước từ 1 – 8cm.</li>
+                    <li style="list-style: disc;"><strong>Nấm vân chi xanh:</strong> Vốn gọi là nấm vân chi rừng xanh bởi nó có màu xanh nổi bật. Mọc phổ biến ở Úc và thường mọc trên các thân cây gỗ mục nát. Trong số các loại nấm vân chi rừng, nấm vân chi xanh thường được sử dụng
+                        để trang trí thay vì để ăn.</li>
+                    <li style="list-style: disc;"><strong>Nấm vân chi Coriolus versicolor:</strong> Nấm vân chi rừng Coriolus versicolor có màu trắng – nâu – cam. Chúng mọc ở nhiều nơi trên thế giới, trên các loại cây gỗ mục và thường mọc thành chùm giống như một chiếc đuôi gà tây.
+                        Từ lâu, loại nấm vân chi rừng này đã được Nhật Bản sử dụng như một liệu pháp hỗ trợ điều trị ung thư.</li>
+                </ul>
+
+                <h3 style="margin: 20px 0px;">Tác dụng của nấm vân chi rừng và lưu ý khi sử dụng</h3>
+                <ul>
+                    <li style="list-style: disc;font-weight: bold;">Loại bỏ khối u ác tính mà không ảnh hưởng đến các tế bào khác</li>
+                    <p>Trong các cuộc nghiên cứu độc tính chung của nấm vân chi cho thấy cấp tính, bán cấp, mạn tính, subchronic, di truyền, kiểm tra độc tính sinh sản và thai nhi đều âm tính, tức là không hề có tác dụng phụ. Nấm vân chi có tác dụng chọn
+                        lọc gây độc tế bào trên tế bào ung thư mà không gây ảnh hưởng đến các tế bào bình thường khác.</p>
+                    <li style="list-style: disc;font-weight: bold;">Giúp sản sinh phản ứng sinh học sửa đổi có lợi trong điều trị ung thư</li>
+                    <p>Nấm vân chi giúp sản sinh ra interferon a,b bởi các tế bào máu trắng bạch cầu đơn nhân. Đồng thời, kích hoạt các hoạt động của tế bào chống ung thư, tăng sự tổng hợp của các yếu tố miễn dịch, ngăn chặn sự teo tuyến của các loại thuốc
+                        hóa trị liệu. Giúp cơ thể phục hồi nhanh những thiệt hại của tế bào tạo máu.</p>
+                    <li style="list-style: disc;font-weight: bold;">Gia tăng đáng kể chất lượng cuộc sống của bệnh nhân</li>
+                    <p>Các kết quả thử nghiệm lâm sàng cho thấy, nấm vân chi rừng với các liệu pháp hóa trị và xạ trị có thể cải thiện đáng kể triệu chứng lâm sàng của bệnh nhân, đặc biệt là bệnh nhân ung thư. Sử dụng nấm vân chi còn tăng sức đề kháng, bảo
+                        vệ máu, mang đến sức mạnh và ổn định chức năng miễn dịch của bệnh nhân. Từ đó giúp nâng cao chất lượng cuộc sống.</p>
+                    <li style="list-style: disc;font-weight: bold;">Giải độc những tác hại của hóa trị và xạ trị</li>
+                    <p>Cách điều trị hiện nay của các bệnh nhân ung thư là hóa trị và xạ trị. Tuy nhiên, hai cách này đều gây những ảnh hưởng không tốt cho cơ thể. Sử dụng nấm vân chi rừng giúp giảm các phản ứng bất lợi gây ra bởi hóa trị và xạ trị.</p>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- login in -->
+
+    <div class="log">
+        <h1>Đăng ký để nhận cập nhật</h1>
+        <p>Để lại email để không bỏ lỡ bất kì ưu đãi nào</p>
+        <form action="">
+            <input type="text" placeholder="Email...">
+            <button type="button" onclick="dieuhuong()"> ĐĂNG KÝ</button>
+        </form>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="mona">
+            <div class="logo"><img src="./img/logo-new.png" alt=""></div>
+            <div class="infro">
+                <p>
+                    235 Hoàng Quốc Việt,Quận Bắc Từ Liêm,Hà Nội
+                    <br><br> 076 922 0162
+                    <br> <br> phuc25186@gmail.com
+
+                </p>
+            </div>
+        </div>
+        <div class="menu">
+            <h3>Menu</h3><br>
+            <span><a href="" class="lang" key="home">Trang chủ</a> </span><br>
+            <span><a href="" class="lang" key="intro">Giới thiệu</a></span><br>
+            <span><a href="" class="lang" key="shop">Cửa hàng</a></span><br>
+            <span><a href="" class="lang" key="knowledge">Kiến thức</a></span><br>
+            <span><a href="" class="lang" key="contact">Liên hệ</a></span>
+        </div>
+        <div class="product-footer">
+            <h3>Sản phẩm</h3><br>
+            <span><a href="" class="lang" key="vegetables">Rau củ</a></span><br>
+            <span><a href="" class="lang" key="fruits">Trái cây</a></span><br>
+            <span><a href="" class="lang" key="drinks">Đồ uống</a></span><br>
+            <span><a href="" class="lang" key="foods">Đồ khô</a></span><br>
+        </div>
+        <div class="instagram">
+            <h3>INSTAGRAM</h3><br>
+            <span>Instagram has returned invalid data.</span>
+        </div>
+    </footer>
+    <!-- copyright -->
+    <div class="copyright">
+        <p>Copyright 2020 RenoshopBee all right reserved - Code by Phuc Nguyen-Hong Phong</p>
+    </div>
+    <!-- top -->
+    <a href="#top" class="gotop"><i class="fas fa-arrow-alt-circle-up"></i></a>
+    <!-- loading -->
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+</body>
+
+<script src="./js/kienthuc.js"></script>
+
+</html>

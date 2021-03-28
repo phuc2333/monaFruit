@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/giohang.css">
+    <title>cleverfood</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="top">
+        <div class="header">
+            <div class="logo">
+                <a href="./index.html"><img src="./img/logo-new.png" alt=""></a>
+
+            </div>
+            <div class="list-product">
+                <ul>
+                    <li><a href="./index.html" class="lang" key="home">Trang chủ</a></li>
+                    <li><a href="./gioithieu.html" class="lang" key="intro">Giới thiệu</a></li>
+                    <li>
+                        <a href="./cuahang.html" class="lang" key="shop">Cửa hàng</a>
+
+                        <ul>
+                            <li><a href="" class="lang" key="vegetables">Rau củ</a> </li>
+                            <li><a href="" class="lang" key="fruits">Trái cây</a></li>
+                            <li><a href="" class="lang" key="drinks">Đồ uống</a></li>
+                            <li><a href="" class="lang" key="foods">Đồ khô</a></li>
+                        </ul>
+
+
+                    </li>
+                    <li><a href="./kienthuc.html" class="lang" key="knowledge">Kiến thức</a> </li>
+                    <li><a href="./lienhe.html" class="lang" key="contact">Liên hệ</a> </li>
+
+                </ul>
+            </div>
+            <div class="list-icon">
+                <ul>
+                    <li onclick="openSearch()"><i class="fas fa-search"></i></li>
+                    <li onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="fas fa-user"></i></li>
+                    <li><i class="fas fa-shopping-cart"></i></li>
+                    <li class="translate">
+                        <span>Translate</span>
+                        <i class="fas fa-globe-europe"></i>
+                        <ul>
+                            <li id="vn" class="translating">Vietnamese</li>
+                            <li id="en" class="translating">English</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- The Modal -->
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="./index.html" method="post">
+            <div class="imgcontainer">
+                <!-- nut close -->
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username or Email</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <!-- cancel -->
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+    <!-- the modal search -->
+    <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+        <div class="overlay-content">
+            <form action="action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button style="margin: 6px 0px;" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- sanphamgiohang -->
+    <div class="sanphamgiohang">
+        <div class="sidebarleft">
+            <div id="main-img">
+                <img src="./img/chanhleo.jpg" id="img-main" alt="">
+            </div>
+            <ul>
+                <li><img onclick="changeimg('one')" id="one" src="./img/chuoichin.jpg" alt=""></li>
+                <li><img onclick="changeimg('two')" id="two" src="./img/duachot.jpg" alt=""></li>
+                <li><img onclick="changeimg('three')" id="three" src="./img/chanhleo.jpg" alt=""></li>
+                <li><img onclick="changeimg('four')" id="four" src="./img/dao.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="shidebarright">
+            <div>
+                <small>TRANG CHỦ / TRÁI CÂY</small>
+                <h3>Chanh dây</h3>
+                <span>320,000 ₫</span>
+                <p>Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn</p>
+            </div>
+
+            <div class="gio">
+
+                <div class="nut"></div>
+                <button>Thêm giỏ hàng</button>
+
+            </div>
+
+            <div class="bank">
+                <small>Tính phí ship tự động</small>
+                <small>Thanh toán </small>
+            </div>
+            <div>
+                <img src="./img/bank.jpg" alt="">
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <div class="content">
+        <div class="title">
+            <div class="mota">Mô tả</div>
+            <div class="danhgia">Đánh giá</div>
+        </div>
+        <div class="one">
+            <h3>Lorem Ipsum là gì?</h3>
+            <p>Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều
+                đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin học văn phòng, nội dung của nó vẫn không hề bị thay đổi. Nó đã được phổ biến trong những năm 1960 nhờ
+                việc bán những bản giấy Letraset in những đoạn Lorem Ipsum, và gần đây hơn, được sử dụng trong các ứng dụng dàn trang, như Aldus PageMaker.</p>
+        </div>
+        <div class="two">
+            <h3>Tại sao lại sử dụng nó?</h3>
+            <p>Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều
+                đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin học văn phòng, nội dung của nó vẫn không hề bị thay đổi. Nó đã được phổ biến trong những năm 1960 nhờ
+                việc bán những bản giấy Letraset in những đoạn Lorem Ipsum, và gần đây hơn, được sử dụng trong các ứng dụng dàn trang, như Aldus PageMaker.</p>
+        </div>
+        <div class="three">
+            <h3>Nó đến từ đâu?</h3>
+            <p>Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều
+                đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin học văn phòng, nội dung của nó vẫn không hề bị thay đổi. Nó đã được phổ biến trong những năm 1960 nhờ
+                việc bán những bản giấy Letraset in những đoạn Lorem Ipsum, và gần đây hơn, được sử dụng trong các ứng dụng dàn trang, như Aldus PageMaker.</p>
+        </div>
+        <div class="nhanxet">
+            <h3>Hãy là người nhận xét đầu tiên</h3>
+            <h6>Đánh giá của bạn</h6>
+            <ul>
+                <li><span class="fa fa-star"></span></li>
+                <li><span class="fa fa-star"></span></i>
+                    <span class="fa fa-star"></span>
+                </li>
+                <li>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </li>
+                <li>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </li>
+                <li>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </li>
+
+            </ul>
+
+            <form action="">
+                <span>Nhận xét của bạn</span>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <span>Tên</span>
+                <input type="text">
+                <span>Email</span>
+                <input type="text">
+                <button>Gửi đi</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+
+
+
+    <!-- login in -->
+
+    <div class="log">
+        <h1>Đăng ký để nhận cập nhật</h1>
+        <p>Để lại email để không bỏ lỡ bất kì ưu đãi nào</p>
+        <form action="">
+            <input type="text" placeholder="Email...">
+            <button type="button" onclick="dieuhuong()"> ĐĂNG KÝ</button>
+        </form>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="mona">
+            <div class="logo"><img src="./img/logo-new.png" alt=""></div>
+            <div class="infro">
+                <p>
+                    235 Hoàng Quốc Việt,Quận Bắc Từ Liêm,Hà Nội
+                    <br><br> 076 922 0162
+                    <br> <br> phuc25186@gmail.com
+
+                </p>
+            </div>
+        </div>
+        <div class="menu">
+            <h3>Menu</h3><br>
+            <span><a href="" class="lang" key="home">Trang chủ</a> </span><br>
+            <span><a href="" class="lang" key="intro">Giới thiệu</a></span><br>
+            <span><a href="" class="lang" key="shop">Cửa hàng</a></span><br>
+            <span><a href="" class="lang" key="knowledge">Kiến thức</a></span><br>
+            <span><a href="" class="lang" key="contact">Liên hệ</a></span>
+        </div>
+        <div class="product-footer">
+            <h3>Sản phẩm</h3><br>
+            <span><a href="" class="lang" key="vegetables">Rau củ</a></span><br>
+            <span><a href="" class="lang" key="fruits">Trái cây</a></span><br>
+            <span><a href="" class="lang" key="drinks">Đồ uống</a></span><br>
+            <span><a href="" class="lang" key="foods">Đồ khô</a></span><br>
+        </div>
+        <div class="instagram">
+            <h3>INSTAGRAM</h3><br>
+            <span>Instagram has returned invalid data.</span>
+        </div>
+    </footer>
+    <!-- copyright -->
+    <div class="copyright">
+        <p>Copyright 2020 RenoshopBee all right reserved - Code by Phuc Nguyen-Hong Phong</p>
+    </div>
+    <!-- top -->
+    <a href="#top" class="gotop"><i class="fas fa-arrow-alt-circle-up"></i></a>
+    <!-- loading -->
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+</body>
+
+<script src="./js/giohang.js"></script>
+
+</html>

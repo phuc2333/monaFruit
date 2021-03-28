@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/kienthuc.css">
+    <title>cleverfood</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="top">
+        <div class="header">
+            <div class="logo">
+                <a href="./index.html"><img src="./img/logo-new.png" alt=""></a>
+
+            </div>
+            <div class="list-product">
+                <ul>
+                    <li><a href="./index.html" class="lang" key="home">Trang chủ</a></li>
+                    <li><a href="./gioithieu.html" class="lang" key="intro">Giới thiệu</a></li>
+                    <li>
+                        <a href="./cuahang.html" class="lang" key="shop">Cửa hàng</a>
+
+                        <ul>
+                            <li><a href="" class="lang" key="vegetables">Rau củ</a> </li>
+                            <li><a href="" class="lang" key="fruits">Trái cây</a></li>
+                            <li><a href="" class="lang" key="drinks">Đồ uống</a></li>
+                            <li><a href="" class="lang" key="foods">Đồ khô</a></li>
+                        </ul>
+
+
+                    </li>
+                    <li><a href="./kienthuc.html" class="lang" key="knowledge">Kiến thức</a> </li>
+                    <li><a href="./lienhe.html" class="lang" key="contact">Liên hệ</a> </li>
+
+                </ul>
+            </div>
+            <div class="list-icon">
+                <ul>
+                    <li onclick="openSearch()"><i class="fas fa-search"></i></li>
+                    <li onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="fas fa-user"></i></li>
+                    <li><i class="fas fa-shopping-cart"></i></li>
+                    <li class="translate">
+                        <span>Translate</span>
+                        <i class="fas fa-globe-europe"></i>
+                        <ul>
+                            <li id="vn" class="translating">Vietnamese</li>
+                            <li id="en" class="translating">English</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- The Modal -->
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="./index.html" method="post">
+            <div class="imgcontainer">
+                <!-- nut close -->
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <!-- cancel -->
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+    <!-- the modal search -->
+    <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+        <div class="overlay-content">
+            <form action="action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button style="margin: 6px 0px;" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="title">
+        <h3>Kiến thức</h3>
+    </div>
+
+    <div class="kienthuc">
+
+        <div class="shide_bar">
+            <form action="">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button><i class="fas fa-search"></i></button>
+            </form>
+            <div class="baivietmoi">
+                <h3>Bài viết mới</h3>
+                <div class="mucluc">
+                    <img src="./img/picture-1.jpg" alt="">
+                    <p>Nấm vân chi có tác dụng gì?</p>
+                </div>
+                <div class="mucluc">
+                    <img src="./img/picture-2.jpg" alt="">
+                    <p>Chả cốm ăn với gì ngon</p>
+                </div>
+                <div class="mucluc">
+                    <img src="./img/picture-3.jpg" alt="">
+                    <p>Cốm tươi làm món gì ngon?</p>
+                </div>
+                <div class="mucluc">
+                    <img src="./img/picture-4.jpg" alt="">
+                    <p style="text-overflow: ellipsis;">Cách làm măng tây xào tỏi</p>
+                </div>
+                <div class="mucluc">
+                    <img src="./img/picture-5.jpg" alt="">
+                    <p>Súp lơ xanh nấu món gì ngon?</p>
+                </div>
+            </div>
+        </div>
+        <div class="List_content">
+            <div class="content-one" onclick="baiviet()">
+                <img src="./img/picture-1.jpg" alt="">
+                <h4>Nấm vân chi có tác dụng gì?</h4>
+                <p>Cách đây hơn 2000 năm, nấm vân chi rừng đã được biết đến và sử ...</p>
+            </div>
+            <div class="content-one" onclick="baiviet()">
+                <img src="./img/picture-2.jpg" alt="">
+                <h4>Chả cốm ăn với gì ngon</h4>
+                <p>Bánh giò là một loại bánh được làm từ bột gạo tẻ, nhân bánh làm ... </p>
+            </div>
+            <div class="content-one" onclick="baiviet()">
+                <img src="./img/picture-3.jpg" alt="">
+                <h4>Cốm tươi làm món gì ngon?</h4>
+                <p>Cốm tươi làm món gì ngon Dùng cốm tươi làm món gì, cốm tươi có ... </p>
+            </div>
+
+            <div class="content-one" onclick="baiviet()">
+                <img src="./img/picture-4.jpg" alt="">
+                <h4>Cách làm măng tây xào tỏi</h4>
+                <p>Nguyên liệu cần để nấu món măng tây xào tỏi 500g măng tây xanh 2 ... </p>
+            </div>
+            <div class="content-one" onclick="baiviet()">
+                <img src="./img/picture-5.jpg" alt="">
+                <h4>Súp lơ xanh nấu món gì ngon?</h4>
+                <p>Súp lơ xanh xào gà Nguyên liệu 600g ức gà; 250g súp lơ xanh; ½ ... </p>
+            </div>
+            <div class="content-one" onclick="baiviet()">
+                <img src="./img/picture-6.jpg" alt="">
+                <h4>Yến mạch là gì?</h4>
+                <p>Yến mạch là gì? Yến mạch là một loại ngũ cốc, thường được trồng ở ... </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- login in -->
+
+    <div class="log">
+        <h1>Đăng ký để nhận cập nhật</h1>
+        <p>Để lại email để không bỏ lỡ bất kì ưu đãi nào</p>
+        <form action="">
+            <input type="text" placeholder="Email...">
+            <button type="button" onclick="dieuhuong()"> ĐĂNG KÝ</button>
+        </form>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="mona">
+            <div class="logo"><img src="./img/logo-new.png" alt=""></div>
+            <div class="infro">
+                <p>
+                    235 Hoàng Quốc Việt,Quận Bắc Từ Liêm,Hà Nội
+                    <br><br> 076 922 0162
+                    <br> <br> phuc25186@gmail.com
+
+                </p>
+            </div>
+        </div>
+        <div class="menu">
+            <h3>Menu</h3><br>
+            <span><a href="" class="lang" key="home">Trang chủ</a> </span><br>
+            <span><a href="" class="lang" key="intro">Giới thiệu</a></span><br>
+            <span><a href="" class="lang" key="shop">Cửa hàng</a></span><br>
+            <span><a href="" class="lang" key="knowledge">Kiến thức</a></span><br>
+            <span><a href="" class="lang" key="contact">Liên hệ</a></span>
+        </div>
+        <div class="product-footer">
+            <h3>Sản phẩm</h3><br>
+            <span><a href="" class="lang" key="vegetables">Rau củ</a></span><br>
+            <span><a href="" class="lang" key="fruits">Trái cây</a></span><br>
+            <span><a href="" class="lang" key="drinks">Đồ uống</a></span><br>
+            <span><a href="" class="lang" key="foods">Đồ khô</a></span><br>
+        </div>
+        <div class="instagram">
+            <h3>INSTAGRAM</h3><br>
+            <span>Instagram has returned invalid data.</span>
+        </div>
+    </footer>
+    <!-- copyright -->
+    <div class="copyright">
+        <p>Copyright 2020 RenoshopBee all right reserved - Code by Phuc Nguyen-Hong Phong</p>
+    </div>
+    <!-- top -->
+    <a href="#top" class="gotop"><i class="fas fa-arrow-alt-circle-up"></i></a>
+    <!-- loading -->
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+</body>
+
+<script src="./js/kienthuc.js"></script>
+
+</html>
